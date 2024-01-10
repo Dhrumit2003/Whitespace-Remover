@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Whitespace Remover</title>
+  <style>
+    /* Optional: Some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #text-input {
+      width: 300px;
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    #remove-btn {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .remove-btn{
+        box-shadow: 3px 3px 3px 3px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="text-input" placeholder="Enter text...">
+  <button id="remove-btn">Remove Whitespace</button>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('remove-btn').addEventListener('click', function() {
+      const text = document.getElementById('text-input').value;
+      const result = document.getElementById('result');
+      
+      // Remove whitespace using regular expression
+      const textWithoutWhitespace = text.replace(/\s/g, '');
+      
+      // Display the result
+      result.textContent = 'Result: ' + textWithoutWhitespace;
+    });
+  </script>
+</body>
+</html>
